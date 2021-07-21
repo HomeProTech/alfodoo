@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 import json
 import logging
-import urlparse
+from werkzeug import urls
 import werkzeug
 
 from odoo import _, http
@@ -119,7 +119,7 @@ def gen_dict_extract(key, var):
 class CmisProxy(http.Controller):
     @property
     def _cmis_proxy_base_url(self):
-        return urlparse.urljoin(request.httprequest.host_url, CMIS_PROXY_PATH)
+        return urls.url_join(request.httprequest.host_url, CMIS_PROXY_PATH)
 
     @classmethod
     def _clean_url_in_dict(cls, values, original, new):
