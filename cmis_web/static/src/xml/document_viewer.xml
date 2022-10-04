@@ -3,7 +3,7 @@
 Most of the code copied from https://github.com/odoo/odoo/blob/c1fa3b8ab3dfa1306dbdd3b6dc910405a3357d16/addons/mail/static/src/xml/thread.xml
 -->
 <templates xml:space="preserve">
-    <t t-name="DocumentViewer.Content">
+    <t t-name="CMISDocumentViewer.Content">
         <div class="o_viewer_content">
             <div class="o_viewer-header">
                 <h2 class="o_image_caption"><t t-esc="widget.activeDocument.name"/></h2>
@@ -54,9 +54,9 @@ Most of the code copied from https://github.com/odoo/odoo/blob/c1fa3b8ab3dfa1306
         </div>
     </t>
 
-    <t t-name="DocumentViewer">
+    <t t-name="CMISDocumentViewer">
         <div class="modal o_modal_fullscreen" tabindex="-1" role="dialog" aria-hidden="true">
-            <t t-call="DocumentViewer.Content"/>
+            <t t-call="CMISDocumentViewer.Content"/>
 
             <t t-if="widget.documents.length != 1">
                 <a class="arrow arrow-left move_previous" href="#">
